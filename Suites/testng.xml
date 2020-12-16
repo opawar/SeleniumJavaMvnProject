@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="TESTING" verbose="1">
+	<!-- <parameter name="username" value="ompawar72@gmail.com" />
+	<parameter name="password" value="manutd20873494" /> -->
+	<parameter name="username" value="fasdfsa" />
+	<parameter name="password" value="adfasf" />
+
+	<test name="NAUKRI_LOGIN">
+		<classes>
+			<class name="com.test.ClassTest" />
+		</classes>
+	</test>
+</suite>
