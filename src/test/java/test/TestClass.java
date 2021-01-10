@@ -7,28 +7,28 @@ import org.testng.annotations.Test;
 
 import project.PageClass;
 
-@Test
+@Test(groups={"test1"})
 public class TestClass {
 	
-	@BeforeMethod
+	@BeforeMethod(groups = "test3")
 	public void launchDriver() {
 		PageClass.launchDriver();
 	}
 	
-	@AfterMethod
+	@AfterMethod(groups = "test3")
 	public void closeDriver() {
 		PageClass.closeDriver();
 	}
 
 	@Parameters({"username", "password"})
-	@Test(description="To verify whether user is able to launch google page", groups={"test1"})
+	@Test(description="To verify whether user is able to launch google page")
 	public void launchGooglePage1(String username, String password) throws Exception {
 		PageClass.launchGooglePage(username, password);
 		throw new Exception("this is a custom exception");
 	}
 	
 	@Parameters({"username", "password"})
-	@Test(description="To verify whether user is able to launch google page", groups={"test1"}, dependsOnMethods="launchGooglePage1")
+	@Test(description="To verify whether user is able to launch google page", dependsOnMethods="launchGooglePage1")
 	public void launchGooglePag2(String username, String password) throws Exception {
 		PageClass.launchGooglePage(username, password);
 		throw new Exception("this is a custom exception");
@@ -47,7 +47,7 @@ public class TestClass {
 	}
 	
 	@Parameters({"username", "password"})
-	@Test(description="To verify whether user is able to launch google page", groups={"test1"}, dependsOnMethods="launchGooglePage1")
+	@Test(description="To verify whether user is able to launch google page", dependsOnMethods="launchGooglePage1")
 	public void launchGooglePag5(String username, String password) throws Exception {
 		PageClass.launchGooglePage(username, password);
 		throw new Exception("this is a custom exception");
