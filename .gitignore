@@ -1,2 +1,4 @@
-/target
-/output
+/target/
+/output/
+/allure-report/
+/allure-results/
