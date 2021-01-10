@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="SUITE" parallel="methods">
+
+	<groups>
+		<run>
+			<include name="test3" />
+		</run>
+	</groups>
+
+	<listeners>
+		<listener class-name="framework.listeners.SuiteListener" />
+		<listener class-name="framework.listeners.TestListener" />
+		<listener class-name="framework.listeners.ReportListener" />
+	</listeners>
+
+	<parameter name="username" value="username.username" />
+	<parameter name="password" value="pwd" />
+
+	<test name="TEST">
+		<classes>
+			<class name="test.TestClass" />
+		</classes>
+	</test>
+</suite>

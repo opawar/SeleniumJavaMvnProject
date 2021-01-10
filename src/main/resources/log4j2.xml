@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%d === %p === %c{1} === [%X{testName}] --- %m%n" />
+		</Console>
+		<File name="File" fileName="output/logs/info.log">
+			<ThresholdFilter level="INFO" onMatch="ACCEPT" onMismatch="ACCEPT"/>
+			<PatternLayout>
+				<Pattern>%d === %p === %c{1} === [%X{testName}] --- %m%n</Pattern>
+			</PatternLayout>
+		</File>
+		<File name="Error" fileName="output/logs/error.log">
+			<ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
+			<PatternLayout>
+				<Pattern>%d === %p === %c{1} === [%X{testName}] --- %m%n</Pattern>
+			</PatternLayout>
+		</File>
+	</Appenders>
+	<Loggers>
+		<Root level="info">
+			<AppenderRef ref="Console" />
+			<AppenderRef ref="File" />
+			<AppenderRef ref="Error" />
+		</Root>
+	</Loggers>
+</Configuration>
